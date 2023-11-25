@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var workingView: TextView
     private lateinit var resultView: TextView
-
     private var input: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         resultView = findViewById(R.id.resultView)
     }
 
-
     fun onNumberClick(view: View) {
         val button = view as Button
         input += button.text
@@ -31,13 +29,28 @@ class MainActivity : AppCompatActivity() {
 
     fun onSymbolClick(view: View) {
         val button = view as Button
-        input += " " + button.text + " "
-        updateWorkingView()
-    }
+        val symbol = button.text.toString()
 
+        if (symbol == "(") {
+            input += " $symbol "
+        } else if (symbol == ")") {
+            val openBracketCount = input.count { it == '(' }
+            val closeBracketCount = input.count { it == ')' }
+
+            if (openBracketCount > closeBracketCount) {
+                input += " $symbol "
+            }
+        } else {
+            if (input.isNotEmpty() && (input.last().isDigit() || input.last() == ')')) {
+                input += " $symbol "
+                updateWorkingView()
+            }
+        }
+    }
     fun onClearClick(view: View) {
         input = ""
         updateWorkingView()
+        resultView.text = ""
     }
 
     fun onEraseClick(view: View) {
@@ -47,21 +60,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     fun onEqualsClick(view: View) {
         try {
             val result = evaluateExpression(input)
             resultView.text = result.toString()
         } catch (e: Exception) {
             resultView.text = "Error"
-            e.printStackTrace()
         }
     }
 
     private fun evaluateExpression(expression: String): Double {
         try {
-            val result = ExpressionBuilder(expression).build().evaluate()
-            return result
+            return ExpressionBuilder(expression).build().evaluate()
         } catch (e: Exception) {
             throw e
         }
