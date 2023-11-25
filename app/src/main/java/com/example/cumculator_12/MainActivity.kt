@@ -81,7 +81,6 @@ class MainActivity : AppCompatActivity() {
 
     fun onFactorialClick(view: View) {
         input += "типа Fuckториал"
-
     }
 
     fun onDegreesClick(view: View) {
