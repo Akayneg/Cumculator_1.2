@@ -1,3 +1,3 @@
 <resources>
-    <string name="app_name">Cumculator_1.2</string>
+    <string name="app_name" translatable="false">Cumculator</string>
 </resources>
