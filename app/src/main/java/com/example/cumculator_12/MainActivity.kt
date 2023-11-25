@@ -41,10 +41,9 @@ class MainActivity : AppCompatActivity() {
                 input += " $symbol "
             }
         } else {
-            // Производим замену символов в текущем вводе перед добавлением нового символа
+
             input = input.replace("×", "*").replace("÷", "/")
 
-            // Добавляем символ только при нажатии "=" или после ввода цифры
             if (input.isNotEmpty() && (input.last().isDigit() || input.last() == ')' || input.last() == '*' || input.last() == '/')) {
                 input += " $symbol "
                 updateWorkingView()
@@ -103,13 +102,5 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateWorkingView() {
         workingView.text = input
-    }
-
-    fun factorial(n: Int): Long {
-        return if (n == 0 || n == 1) {
-            1
-        } else {
-            n * factorial(n - 1)
-        }
     }
 }

@@ -69,7 +69,7 @@
             android:text=")"/>
         <Button
             style="@style/buttonSymbols"
-            android:text="÷"/>
+            android:text="/"/>
 
     </LinearLayout>
 
@@ -87,7 +87,7 @@
             android:text="9"/>
         <Button
             style="@style/buttonSymbols"
-            android:text="×"/>
+            android:text="*"/>
 
     </LinearLayout>
 
