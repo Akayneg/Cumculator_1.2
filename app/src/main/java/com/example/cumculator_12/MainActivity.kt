@@ -41,12 +41,22 @@ class MainActivity : AppCompatActivity() {
                 input += " $symbol "
             }
         } else {
-            if (input.isNotEmpty() && (input.last().isDigit() || input.last() == ')')) {
-                input += " $symbol "
+            // Преобразуем символы × и ÷ в операторы * и /
+            val convertedSymbol = when (symbol) {
+                "×" -> "*"
+                "÷" -> "/"
+                else -> symbol
+            }
+
+            // Добавим символ только при нажатии "=" или после ввода цифры
+            if (input.isNotEmpty() && (input.last().isDigit() || input.last() == ')' || input.last() == '*' || input.last() == '/')) {
+                input += " $convertedSymbol "
                 updateWorkingView()
             }
         }
     }
+
+
     fun onClearClick(view: View) {
         input = ""
         updateWorkingView()
