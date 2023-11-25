@@ -11,42 +11,45 @@
     android:layout_gravity="center"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="83dp"
         android:layout_weight="2"
         android:padding="20dp">
 
-        <TextView
-            android:id="@+id/workingView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:lines="2"
-            android:maxLines="2"
 
-            android:textColor="@color/white"
-            android:textAlignment="textEnd"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@id/resultView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/workingView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:maxLines="2"
+                android:text=""
 
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@id/resultView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
+            <TextView
             android:id="@+id/resultView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
+            android:layout_marginBottom="116dp"
             android:lines="1"
             android:maxLines="1"
-            android:textColor="@color/white"
+            android:text=""
             android:textAlignment="textEnd"
+            android:textColor="@color/white"
             android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

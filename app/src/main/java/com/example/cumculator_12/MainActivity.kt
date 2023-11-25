@@ -41,21 +41,16 @@ class MainActivity : AppCompatActivity() {
                 input += " $symbol "
             }
         } else {
-            // Преобразуем символы × и ÷ в операторы * и /
-            val convertedSymbol = when (symbol) {
-                "×" -> "*"
-                "÷" -> "/"
-                else -> symbol
-            }
+            // Производим замену символов в текущем вводе перед добавлением нового символа
+            input = input.replace("×", "*").replace("÷", "/")
 
-            // Добавим символ только при нажатии "=" или после ввода цифры
+            // Добавляем символ только при нажатии "=" или после ввода цифры
             if (input.isNotEmpty() && (input.last().isDigit() || input.last() == ')' || input.last() == '*' || input.last() == '/')) {
-                input += " $convertedSymbol "
+                input += " $symbol "
                 updateWorkingView()
             }
         }
     }
-
 
     fun onClearClick(view: View) {
         input = ""
@@ -79,6 +74,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun onRootClick(view: View) {
+        input += " √("
+        updateWorkingView()
+    }
+
+    fun onFactorialClick(view: View) {
+        input += "типа Fuckториал"
+
+    }
+
+    fun onDegreesClick(view: View) {
+        input += " ^ "
+        updateWorkingView()
+    }
+
+    fun on69Click(view: View) {
+        input += "Bruh! "
+        updateWorkingView()
+    }
+
     private fun evaluateExpression(expression: String): Double {
         try {
             return ExpressionBuilder(expression).build().evaluate()
@@ -89,5 +104,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateWorkingView() {
         workingView.text = input
+    }
+
+    fun factorial(n: Int): Long {
+        return if (n == 0 || n == 1) {
+            1
+        } else {
+            n * factorial(n - 1)
+        }
     }
 }
