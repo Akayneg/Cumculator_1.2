@@ -72,23 +72,43 @@ class MainActivity : AppCompatActivity() {
             resultView.text = "Error"
         }
     }
+    fun onFactorialClick(view: View){
+        input += "!"
+        updateWorkingView()
+    }
 
     fun onRootClick(view: View) {
         input += " sqrt("
         updateWorkingView()
     }
 
-    fun onFactorialClick(view: View) {
-        input += "типа Fuckториал"
+    fun onLOGClick(view: View) {
+        input += "log("
+        updateWorkingView()
+    }
+
+    fun onCOSClick(view: View) {
+        input += "cos("
+        updateWorkingView()
+    }
+
+    fun onSINClick(view: View) {
+        input += "sin("
+        updateWorkingView()
     }
 
     fun onDegreesClick(view: View) {
-        input += " ^ "
+        input += "^"
         updateWorkingView()
     }
 
     fun on69Click(view: View) {
         input += "Bruh! "
+        updateWorkingView()
+    }
+
+    fun onPIClick(view: View) {
+        input += "3.14159265358979"
         updateWorkingView()
     }
 

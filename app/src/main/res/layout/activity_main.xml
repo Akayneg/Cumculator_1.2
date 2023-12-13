@@ -63,9 +63,11 @@
             android:text="AC"/>
         <Button
             style="@style/buttonNumber"
+            android:textColor="@color/red"
             android:text="("/>
         <Button
             style="@style/buttonNumber"
+            android:textColor="@color/red"
             android:text=")"/>
         <Button
             style="@style/buttonSymbols"
@@ -135,6 +137,7 @@
             android:text="0"/>
         <Button
             style="@style/buttonNumber"
+            android:textColor="@color/red"
             android:text="."/>
         <Button
             style="@style/buttonNumber"

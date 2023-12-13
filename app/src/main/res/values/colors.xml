@@ -3,11 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>
-    <color name="numberBackgroundColor">#EFF4F9</color>
-    <color name="acBackgroundColor">#E6DEFF</color>
-    <color name="symbolsBackgroundColor">#D1E5F4</color>
-    <color name="equallyBackgroundColor">#C1E8FF</color>
-    <color name="layoutBackgroundColor">#FCFCFF</color>
     <color name="red">#FF0000</color>
 
 </resources>
